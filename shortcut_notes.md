@@ -9,3 +9,7 @@ The leader is ,, so whenever you see <leader> it means ,.
 ```
 <leader>g
 ```
+文件名搜索
+```
+<C-f>
+```
