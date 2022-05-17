@@ -1,1 +1,11 @@
-../../.vim/coc-settings.json
+{
+    "coc.preferences.rootPatterns": ["/home/ice/projects/gino/doxmaster2/src"],
+    "python.pythonPath": "/home/ice/.virtualenvs/310/bin/python3.10",
+    "python.sortImports.path": "/home/ice/.virtualenvs/310/bin/isort",
+    "python.sortImports.args": ["/home/ice/projects/gino/doxmaster2/src/.isort.cfg"],
+    "pyright.enable": false,
+    "python.analysis.autoImportCompletions": true,
+    "python.linting.flake8Enabled": true
+    //"python.linting.pylintEnabled": true,
+    //"python.linting.enabled": true
+}
