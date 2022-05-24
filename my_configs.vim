@@ -1,3 +1,27 @@
+"===============================================================================
+" 
+" vim-plug
+"
+" PlugInstall [name ...] [#threads]	Install plugins
+" PlugUpdate [name ...] [#threads]	Install or update plugins
+" PlugClean[!]	Remove unlisted plugins (bang version will clean without prompt)
+" PlugUpgrade	Upgrade vim-plug itself
+" PlugStatus	    Check the status of plugins
+" PlugDiff	    Examine changes from the previous update and the pending changes
+" PlugSnapshot[!] [output path]	Generate script for restoring the current snapshot of the plugins
+"===============================================================================
+call plug#begin('~/.vim_runtime/my_plugins')
+Plug 'brentyi/isort.vim'
+Plug 'fisadev/vim-isort'
+Plug 'zivyangll/git-blame.vim'
+" installed coc.vim and user coc to installed another plugs
+" coc.vim is a wonderful platform with Have the ability to load plugs
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+call plug#end()
+
+"autocmd BufWritePost *.py :CocCommand python.sortImports
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -5,10 +29,13 @@
 set history=500
 " set number
 
+" search all files
 map <leader>g :Ack 
 
+" git blame in line
 nnoremap <Leader>s :<C-u>call gitblame#echo()<CR>
 
+let g:vim_isort_map = '<C-i>'
 
 
 "-------------------------------------------------------------------------------
