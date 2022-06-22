@@ -14,6 +14,8 @@ call plug#begin('~/.vim_runtime/my_plugins')
 Plug 'brentyi/isort.vim'
 Plug 'fisadev/vim-isort'
 Plug 'zivyangll/git-blame.vim'
+Plug 'liuchengxu/vista.vim'
+Plug 'rhysd/git-messenger.vim'
 " installed coc.vim and user coc to installed another plugs
 " coc.vim is a wonderful platform with Have the ability to load plugs
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -27,17 +29,51 @@ call plug#end()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Sets how many lines of history VIM has to remember
 set history=500
-" set number
+set number
+
+" set listchars=tab:»■,trail:■
+" set list
+
+set relativenumber
 
 " search all files
-map <leader>g :Ack 
+map <leader>g :Ack --python 
 
+" NERDTree
+" show hidden files
+let NERDTreeShowHidden=1
+
+"
+"-------------------------------------------------------------------------------
+" zivyangll/git-blame.vim
+"-------------------------------------------------------------------------------
 " git blame in line
 nnoremap <Leader>s :<C-u>call gitblame#echo()<CR>
 
+"-------------------------------------------------------------------------------
+" rhysd/git-messenger.vim
+"-------------------------------------------------------------------------------
+" git messager
+nmap <leader>d :GitMessenger<cr>
+
 let g:vim_isort_map = '<C-i>'
+let g:git_messenger_floating_win_opts = { 'border': 'single' }
+let g:git_messenger_popup_content_margins = v:false
+
+" Vista
+nmap <leader><F2> :Vista!!<cr>
+
+" Sourcery Ai https://docs.sourcery.ai/IDEs/Vim/
+nnoremap <silent> <leader>cl :CocDiagnostics<cr>
+nnoremap <silent> <leader>ch :call CocAction('doHover')<cr>
+nnoremap <silent> <leader>cf <plug>(coc-codeaction-cursor)
+nnoremap <silent> <leader>ca <plug>(coc-fix-current)
+
+nmap <silent> [c <plug>(coc-diagnostic-prev)
+nmap <silent> ]c <plug>(coc-diagnostic-next)
 
 
+"
 "-------------------------------------------------------------------------------
 " coc.nvim
 "-------------------------------------------------------------------------------
