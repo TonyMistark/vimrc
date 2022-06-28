@@ -16,6 +16,7 @@ Plug 'fisadev/vim-isort'
 Plug 'zivyangll/git-blame.vim'
 Plug 'liuchengxu/vista.vim'
 Plug 'rhysd/git-messenger.vim'
+Plug 'vim-python/python-syntax'
 " installed coc.vim and user coc to installed another plugs
 " coc.vim is a wonderful platform with Have the ability to load plugs
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -30,6 +31,12 @@ call plug#end()
 " Sets how many lines of history VIM has to remember
 set history=500
 set number
+
+" vim-python/python-syntax
+let g:python_highlight_string_format = 1
+" let g:python_highlight_builtin_objs  = 1
+let g:python_highlight_all = 1
+
 
 " set listchars=tab:»■,trail:■
 " set list
