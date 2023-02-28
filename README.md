@@ -69,10 +69,6 @@ Just do a git rebase!
     git pull --rebase
     python update_plugins.py  # use python3 if python is unavailable
 
-NOTE: If you get `ModuleNotFoundError: No module named 'requests'`, you must first install the `requests` python module using `pip`, `pip3`, or `easy_install`.
-
-    pip install requests
-
 ## Some screenshots
 
 Colors when editing a Python file:
@@ -149,12 +145,13 @@ You can also install your plugins, for instance, via pathogen you can install [v
 	cd ~/.vim_runtime
 	git clone git://github.com/tpope/vim-rails.git my_plugins/vim-rails
 
-You can also install plugins without any plugin manager (vim 8+ required):  
-	Add `packloadall` to your .vimrc file  
-	Create pack plugin directory:  
-	`mkdir -p ~/.vim/pack/plugins/start`  
-	Clone the plugin that you want in that directory, for example:  
-	`git clone --depth=1 git://github.com/maxmellon/vim-jsx-pretty  ~/.vim/pack/plugins/vim-jsx-pretty`
+You can also install plugins without any plugin manager (vim 8+ required):
+
+* Add `packloadall` to your `.vimrc` file
+* Create pack plugin directory:\
+`mkdir -p ~/.vim_runtime/pack/plugins/start`
+* Clone the plugin that you want in that directory, for example:\
+`git clone --depth=1 git://github.com/maxmellon/vim-jsx-pretty  ~/.vim_runtime/pack/plugins/start/vim-jsx-pretty`
 
 
 ## Key Mappings
@@ -172,7 +169,6 @@ Map `<Space>` to `/` (search) and `<Ctrl>+<Space>` to `?` (backwards search):
 	
 	map <space> /
 	map <C-space> ?
-	map <silent> <leader><cr> :noh<cr>
 
 Disable highlights when you press `<leader><cr>`:
 	
@@ -202,7 +198,7 @@ Useful mappings for managing tabs:
 	
 	" Opens a new tab with the current buffer's path
 	" Super useful when editing files in the same directory
-	map <leader>te :tabedit <C-r>=expand("%:p:h")<cr>/
+	map <leader>te :tabedit <C-r>=escape(expand("%:p:h"), " ")<cr>/
 	
 Switch [CWD](http://vim.wikia.com/wiki/Set_working_directory_to_the_current_file) to the directory of the open buffer:
 	
@@ -357,7 +353,6 @@ Open [ctrlp.vim](https://github.com/kien/ctrlp.vim) plugin to quickly find a fil
 
     nnoremap <leader>v :.GBrowse!<CR>
     xnoremap <leader>v :'<'>GBrowse!<CR>
-
 
 ### Spell checking
 Pressing `<leader>ss` will toggle spell checking:
