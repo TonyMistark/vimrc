@@ -1,5 +1,21 @@
 [flake8]
 ignore = E226,E302,E41
-max-line-length = 88
+max-line-length = 100
 exclude = tests/*
 max-complexity = 10
+
+# [flake8]
+# max-line-length = 100
+# extend-ignore = E203
+# ignore = 
+#     # H501: Do not use self.__dict__ for string formatting
+#     E501,
+#     # W503: line break before binary operator
+#     W503
+#     W291,
+#     E722
+# exclude =
+#     .git,
+#     __pycache__,
+#     build,
+#     dist
