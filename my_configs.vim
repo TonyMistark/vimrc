@@ -17,11 +17,15 @@ Plug 'zivyangll/git-blame.vim'
 Plug 'liuchengxu/vista.vim'
 Plug 'rhysd/git-messenger.vim'
 Plug 'vim-python/python-syntax'
+Plug 'morhetz/gruvbox'
 " installed coc.vim and user coc to installed another plugs
 " coc.vim is a wonderful platform with Have the ability to load plugs
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
+
+"Theme
+colorscheme gruvbox
 
 "autocmd BufWritePost *.py :CocCommand python.sortImports
 
