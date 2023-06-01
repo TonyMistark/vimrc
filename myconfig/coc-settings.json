@@ -5,7 +5,9 @@
     "python.sortImports.args": ["/home/ice/projects/gino/doxmaster2/src/.isort.cfg"],
     "pyright.enable": false,
     "python.analysis.autoImportCompletions": true,
-    "python.linting.flake8Enabled": true
+    "python.linting.flake8Enabled": true,
     //"python.linting.pylintEnabled": true,
     //"python.linting.enabled": true
+    "rust-analyzer.enable": true,
+    "rust-analyzer.server.path": "/usr/local/bin/rust-analyzer"
 }
