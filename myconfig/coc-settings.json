@@ -1,11 +1,51 @@
 {
-    "coc.preferences.rootPatterns": ["/home/ice/projects/gino/doxmaster2/src"],
-    "python.pythonPath": "/home/ice/.virtualenvs/310/bin/python3.10",
+    "suggest.noselect": true,
+    "rust-analyzer.server.extraEnv": {
+        "RUSTUP_TOOLCHAIN": "stable"
+    },
+    "rust-analyzer.enable": true,
+    "rust-analyzer.server.path": "/home/ice/.cargo/bin/",
+    "coc.preferences.rootPatterns": [
+        "/home/ice/projects/gino/doxmaster2/src"
+    ],
+    "python.pythonPath": "/home/ice/.virtualenvs/311/bin/python3.11",
     "python.sortImports.path": "/home/ice/.virtualenvs/310/bin/isort",
-    "python.sortImports.args": ["/home/ice/projects/gino/doxmaster2/src/.isort.cfg"],
-    "pyright.enable": false,
+    "python.sortImports.args": [
+        "/home/ice/projects/gino/doxmaster2/src/.isort.cfg"
+    ],
+    "pyright.enable": true,
+    "pyright.inlayHints.variableTypes": false,
     "python.analysis.autoImportCompletions": true,
-    "python.linting.flake8Enabled": true
-    //"python.linting.pylintEnabled": true,
-    //"python.linting.enabled": true
+    "python.linting.flake8Enabled": true,
+    "coc.preferences.formatOnType": true,
+    "coc.preferences.formatOnSaveFiletypes": [
+        "python"
+    ],
+    "python.formatting.provider": "black",
+    "python.formatting.blackArgs": [
+        "-l",
+        100
+    ],
+    "python.formatting.blackPath": "/home/ice/.virtualenvs/311/bin/black",
+    "languageserver": {
+        "sourcery": {
+            "command": "/home/ice/.virtualenvs/311/lib/python3.11/site-packages/sourcery_cli/sourcery",
+            "args": [
+                "lsp"
+            ],
+            "filetypes": [
+                "python"
+            ],
+            "initializationOptions": {
+                "token": "user_bYQQ75oGxhpWkaEoGFK4yTov3Q5qZbT0ETtuiPoO2HSdRXENwNisI_JvIU0",
+                "extension_version": "coc.vim",
+                "editor_version": "vim"
+            },
+            "settings": {
+                "sourcery": {
+                    "metricsEnabled": true
+                }
+            }
+        }
+    }
 }
