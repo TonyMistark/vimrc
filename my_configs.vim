@@ -17,10 +17,22 @@ Plug 'zivyangll/git-blame.vim'
 Plug 'liuchengxu/vista.vim'
 Plug 'rhysd/git-messenger.vim'
 Plug 'vim-python/python-syntax'
-Plug 'morhetz/gruvbox'
+"Plug 'morhetz/gruvbox'
+Plug 'NoahTheDuke/vim-just'
+"Plug 'tpope/fugitive-vim'
 " installed coc.vim and user coc to installed another plugs
 " coc.vim is a wonderful platform with Have the ability to load plugs
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" vim spell checker plug
+Plug 'kamykn/spelunker.vim'
+" https://github.com/liuchengxu/vim-clap
+Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary' }
+" https://github.com/puremourning/vimspector#installation
+Plug 'puremourning/vimspector'
+" https://github.com/psliwka/vim-smoothie
+Plug 'psliwka/vim-smoothie'
+" https://github.com/preservim/nerdcommenter
+Plug 'preservim/nerdcommenter'
 
 call plug#end()
 
@@ -50,9 +62,25 @@ set relativenumber
 " search all files
 map <leader>g :Ack --python 
 
+" Clap
+map <leader>c :Clap
+map <leader>cg : Clap grep
+map <leader>cr : Clap recent_files
+
+nnoremap <A-f> :Clap grep<CR>
+
+" vimspector
+" let g:vimspector_enable_mappings = 'HUMAN'
+" packadd! vimspector
+
+
+
 " NERDTree
 " show hidden files
 let NERDTreeShowHidden=1
+
+" Specify this variable to enable the plugin feature.
+let g:clap_plugin_experimental = v:true
 
 "
 "-------------------------------------------------------------------------------
@@ -82,6 +110,22 @@ nnoremap <silent> <leader>ca <plug>(coc-fix-current)
 
 nmap <silent> [c <plug>(coc-diagnostic-prev)
 nmap <silent> ]c <plug>(coc-diagnostic-next)
+
+"-------------------------------------------------------------------------------
+" Plug 'kamykn/spelunker.vim'
+"-------------------------------------------------------------------------------
+" Enable spelunker.vim. (default: 1)
+" 1: enable
+" 0: disable
+let g:enable_spelunker_vim = 1
+
+" Correct all words in buffer.
+" ZL
+
+" Correct word under cursor.
+" Zl
+" You can add words to your user specific allowlist:
+let g:spelunker_white_list_for_user = ['kamykn', 'vimrc']
 
 
 "
